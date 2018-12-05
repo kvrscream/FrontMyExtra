@@ -3,7 +3,8 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import Login from './Pages/login';
 import Dashboard from './Pages/Dashboard';
-import Tarefas from './Pages/tarefas';
+import Tarefas from './Pages/Tarefas/tarefas';
+import Create from './Pages/Tarefas/create';
 
 const Routes = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ const Routes = () => (
       <Route exact path="/" component={Login} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/tarefas" component={Tarefas} />
+      <Route path="/tarefas-create" component={Create} />
      </Switch>
   </BrowserRouter>
 )
