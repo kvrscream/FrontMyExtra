@@ -28,7 +28,7 @@ export default class Tarefas extends Component {
         <Grid>
           <Row>
             <Col smOffset={10} xsOffset={6} >
-              <Button bsStyle="primary">
+              <Button bsStyle="primary" onClick={() => {this.props.history.push("/tarefas-create")}} >
                 Nova Tarefa
               </Button>
             </Col>
