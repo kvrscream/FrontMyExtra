@@ -9,6 +9,14 @@ export default class Tarefas extends Component {
     tasks: [],
   }
 
+  editar = (e) => {
+
+  }
+
+  excluir = (e) => {
+
+  }
+
   componentDidMount = async () => {
     const user = localStorage.getItem("@user");
     
@@ -40,6 +48,7 @@ export default class Tarefas extends Component {
                 <thead>
                   <th>#</th>
                   <th>Tarefa</th>
+                  <th>Quem Realizará</th>
                   <th>Data</th>
                   <th>Açoes</th>
                 </thead>
@@ -52,7 +61,13 @@ export default class Tarefas extends Component {
                           <td>{row.title}</td>
                           <td>{row.user}</td>
                           <td>
-                            <Button bsStyle="info">Abrir</Button>
+                            {
+                              row.Data
+                            }
+                          </td>
+                          <td>
+                            <Button bsStyle="info">Editar</Button>
+                            <Button bsStyle="danger">Excluir</Button>
                           </td>
                         </tr>
                       )
