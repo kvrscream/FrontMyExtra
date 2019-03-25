@@ -11,7 +11,9 @@ export default class Create extends Component {
         title: '',
         description: '',
         dev:'',
-        cliente: ''
+        cliente: '',
+        Anexo: [],
+        Mime: ''
     }
 
     handleTitle = (e) => {
@@ -30,6 +32,10 @@ export default class Create extends Component {
         this.setState({cliente: e.target.value});
     }
 
+    handleAnexo = (e) => {
+        this.setState({Anexo: e.target.value});
+    }
+
     componentDidMount = async () => {
         const response = await api.get('/');
         this.setState({users: response.data});
@@ -40,7 +46,8 @@ export default class Create extends Component {
             title: this.state.title,
             description: this.state.description,
             user: this.state.dev,
-            cliente: this.setState.cliente
+            cliente: this.setState.cliente,
+            Arquivo: this.state.Anexo
         }
 
         const response = await api.post("/tasks/create", data);
@@ -106,6 +113,17 @@ export default class Create extends Component {
                                             <FormControl componentClass="textarea" placeholder="Digite Aqui" 
                                                 value={this.state.description}
                                                 onChange={this.handleDesc}
+                                            />
+                                        </FormGroup>
+                                    </Col>
+                                    <Col Component={ControlLabel} sm={12}>
+                                        Anexo:
+                                    </Col>
+                                    <Col sm={12}>
+                                        <FormGroup>
+                                            <FormControl type="file" placeholder="" 
+                                                value={this.state.Anexo}
+                                                onChange={this.handleAnexo}
                                             />
                                         </FormGroup>
                                     </Col>
