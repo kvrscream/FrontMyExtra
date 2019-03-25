@@ -24,7 +24,6 @@ export default class Create extends Component {
 
     handleDev = (e) => {
         this.setState({dev: e.target.value});
-        console.log(e.target.value);
     }
 
     handleClient = (e) => {

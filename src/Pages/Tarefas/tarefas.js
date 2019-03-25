@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Row, Grid, Col, Table, Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import Menu from  '../../Components/menu';
 import api from '../../Services/api';
 
@@ -52,7 +53,11 @@ export default class Tarefas extends Component {
                           <td>{row.title}</td>
                           <td>{row.user}</td>
                           <td>
-                            <Button bsStyle="info">Abrir</Button>
+                            <Button bsStyle="info">
+                              <Link to={`/tarefas-detalhe/${row._id}`}>
+                                Abrir
+                              </Link>
+                            </Button>
                           </td>
                         </tr>
                       )
